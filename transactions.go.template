@@ -43,7 +43,7 @@ import (
 	// Sign transaction
 	log.Println("[DEBUG] Signing authorization transaction")
 	var signedTx interface{}
-	data, err := json.Marshal(tx.Transaction(types.TransactionVersion(gtypes.TransactionVersionAuthAddressUpdate)))
+	data, err := json.Marshal(tx.Transaction(types.TransactionVersion({{.Blockchain.Name}}types.TransactionVersionAuthAddressUpdate)))
 	if err != nil {
 		return types.TransactionID{}, err
 	}

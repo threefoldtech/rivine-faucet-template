@@ -82,12 +82,12 @@ func init() {
 	flag.Uint64Var(&coinsToGive, "fund-amount", coinsToGive, "amount of coins to give per drip of the faucet")
 	flag.Parse()
 	{{if .Blockchain.Transactions.Authcoin}}// register tx versions for authentication
-	types.RegisterTransactionVersion(gtypes.TransactionVersionAuthAddressUpdate, authcointx.AuthAddressUpdateTransactionController{
+	types.RegisterTransactionVersion({{.Blockchain.Name}}types.TransactionVersionAuthAddressUpdate, authcointx.AuthAddressUpdateTransactionController{
 		AuthInfoGetter:     nil,
-		TransactionVersion: gtypes.TransactionVersionAuthAddressUpdate,
+		TransactionVersion: {{.Blockchain.Name}}types.TransactionVersionAuthAddressUpdate,
 	})
-	types.RegisterTransactionVersion(gtypes.TransactionVersionAuthConditionUpdate, authcointx.AuthConditionUpdateTransactionController{
+	types.RegisterTransactionVersion({{.Blockchain.Name}}types.TransactionVersionAuthConditionUpdate, authcointx.AuthConditionUpdateTransactionController{
 		AuthInfoGetter:     nil,
-		TransactionVersion: gtypes.TransactionVersionAuthConditionUpdate,
+		TransactionVersion: {{.Blockchain.Name}}types.TransactionVersionAuthConditionUpdate,
 	}){{end}}
 }

@@ -72,7 +72,7 @@ var coinConfirmationTemplate = mustTemplate("coinconfirmation.html", fmt.Sprintf
 </head>
 <body>
 	<div align="center">
-		<h1>%d {{.Blockchain.Currency.Unit}} succesfully transferred on {{.Blockchain.Name}}"s {{"{{.ChainNetwork}}"}} to {{"{{.Address}}"}}</h1>
+		<h1>%d {{.Blockchain.Currency.Unit}} succesfully transferred on {{.Blockchain.Name}}'s {{"{{.ChainNetwork}}"}} to {{"{{.Address}}"}}</h1>
 		<p>You can look up the transaction using the following ID:</p>
 		<div><code>{{"{{.TransactionID}}"}}</code></div>
 		<p><a href="/">Return to the homepage</a></p>
