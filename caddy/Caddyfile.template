@@ -1,8 +1,4 @@
-{{ with $root := . }}{{ with $dns := "faucet.example.com" }}{{ with $tls := "support@example.com" }}{{ if $root.Frontend }}{{ if $root.Frontend.Faucet }}{{ if $root.Frontend.Faucet.Caddy }}{{ if $root.Frontend.Faucet.Caddy.DNS }}{{ $dns = $root.Frontend.Faucet.Caddy.DNS }}{{ end }}{{ if $root.Frontend.Faucet.Caddy.TLS }}{{ $tls = $root.Frontend.Faucet.Caddy.TLS }}{{ end }}{{ end }}{{ end }}http://{{ $dns }} {
-    redir https://{{ $dns }}
-}
-
-https://{{ $dns }} {
+{{ $dns }} {
     proxy / localhost:2020 {
         transparent
     }
