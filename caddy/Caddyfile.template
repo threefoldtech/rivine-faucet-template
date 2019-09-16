@@ -1,8 +1,8 @@
-{{ $dns }} {
+{{ .Frontend.Faucet.Caddy.DNS }} {
     proxy / localhost:2020 {
         transparent
     }
 
     log stdout
-    tls {{ $tls }}
-}{{ end }}{{ end }}{{ end }}{{ end }}
+    tls {{ .Frontend.Explorer.Caddy.TLS }}
+}
